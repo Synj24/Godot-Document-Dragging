@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var draggingDistance
 var dir
@@ -25,10 +25,12 @@ func _input(event):
 
 func _physics_process(delta):
 	if dragging:
-		move_and_slide((newPosition - position) * Vector2(30, 30))
+		velocity = (newPosition - position) * Vector2(30, 30)
+		move_and_slide()
+		# move_and_slide((newPosition - position) * Vector2(30, 30))
 
 
-func chosen():
+func choose():
 	chosen = true
 	
 func mouse_entered():

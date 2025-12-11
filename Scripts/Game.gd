@@ -7,7 +7,7 @@ var paper_scene = preload("res://Scenes/Paper.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(0, 2):
-		var paper = paper_scene.instance()
+		var paper = paper_scene.instantiate()
 		add_paper(paper)
 
 func add_paper(paper):

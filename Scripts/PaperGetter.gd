@@ -11,7 +11,7 @@ func _process(delta):
 	if (count == 0):
 		pass
 	elif (count == 1):
-		get_overlapping_bodies()[0].chosen()
+		get_overlapping_bodies()[0].choose()
 		if (Input.is_action_just_pressed("mouse_click")):
 			get_parent().push_paper_to_top(get_overlapping_bodies()[0])
 
@@ -23,12 +23,9 @@ func _process(delta):
 				max_index = b.z_index
 				top_paper = b
 		
-		top_paper.chosen()
+		top_paper.choose()
 		for b in get_overlapping_bodies():
 			if b != top_paper:
 				b.chosen = false
 		if (Input.is_action_just_pressed("mouse_click")):
 			get_parent().push_paper_to_top(top_paper)
-
-
-
